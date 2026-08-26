@@ -11,14 +11,12 @@ const authMidleware = require('../middleware/auth.middleware')
 /**
  * @route - post -> /api/auth/register
  * @description register user
- * @access private
  */
 router.post('/register', authController.registerController)
 
 /**
  * @route post -> /api/auth/login
  * @description user login
- * @access private
  */
 router.post('/login', authController.loginController)
 

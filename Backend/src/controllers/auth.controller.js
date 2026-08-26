@@ -2,9 +2,13 @@ const userModel = require('../models/user.model')
 
 const bcrypt = require('bcryptjs')
 
+
 const jwt = require('jsonwebtoken')
 
 const blacklistModel = require('../models/blacklist.model')
+
+const redis = require("../config/cache");
+
 
 // register controller
 
@@ -121,9 +125,12 @@ async function logOutController(req, res){
 
   res.clearCookie("token")
 
-  await blacklistModel.create({
-    token
-  })
+  // token is set in redis as key time as value and it will expire in 1 hour
+  await redis.set(token, Date.now().toString(), "EX", 60*60)
+
+  // await blacklistModel.create({
+  //   token
+  // })
 
   res.status(201).json({
     message: "loggedout successfully"

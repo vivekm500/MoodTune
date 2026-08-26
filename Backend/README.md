@@ -495,3 +495,18 @@ Redis = the workbench
 You don't keep your company's permanent records on the workbench just because you can reach them faster.
 You keep frequently needed things there while the vault remains the source of truth.
 And one correction to the common explanation: Redis isn't inherently "faster than MongoDB" for every operation. Redis is exceptionally fast for the workloads it's designed for; MongoDB can also be very fast with appropriate indexes, schema design, hardware, and query patterns.
+
+
+
+// Redis publis endpoint
+
+distinctive-snails-quince-74033.db.redis.io:15495
+
+HOST - distinctive-snails-quince-74033.db.redis.io:
+PORT - 15495
+PASSWORD - oWLh1CP01KgrofRJqgiey4PJlIYyfSuy
+
+to connecct database with redis we need to install a package in backend with command **npm i ioredis**
+
+// follow this link to read about how to setup redis and use it
+**https://www.npmjs.com/package/ioredis**
