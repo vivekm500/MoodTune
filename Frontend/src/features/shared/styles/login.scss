@@ -1,0 +1,61 @@
+@use './button.scss';
+
+
+.login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+     background-color: rgb(216, 165, 176);
+    background-image: url('https://images.unsplash.com/photo-1630441100130-90451b6ae4f8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-blend-mode: multiply;
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0rem 0rem 5rem rgba(142, 20, 236, 0.6);
+        min-width: 30vw;
+        // margin-left: 3.5rem;
+        
+        background: rgba(70, 45, 55, 0.543);
+        backdrop-filter: blur(10px);
+        margin: 2rem;
+    }
+
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    input{
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    
+
+}
