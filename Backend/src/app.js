@@ -24,6 +24,12 @@ const authRoutes = require('./routes/auth.routes')
 
 app.use('/api/auth', authRoutes)
 
+/**
+ * song Routes
+ */
 
+const songRoutes = require('./routes/song.routes')
+
+app.use('/api/songs', songRoutes)
 
 module.exports  = app;
