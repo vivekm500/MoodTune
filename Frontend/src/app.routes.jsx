@@ -5,7 +5,8 @@ import Protected from './features/Auth/components/protected'
 import Home from './features/Home/pages/Home'
 
 export const router = createBrowserRouter([
-  { path: '/', element: <Protected><Home /></Protected> },
+  {path: '/', element: <Home />},
+  // { path: '/', element: <Protected><Home /></Protected> },
   { path: '/register', element: <Register /> },
   { path: '/login', element: <Login /> },
 ])

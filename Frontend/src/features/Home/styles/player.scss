@@ -1,4 +1,4 @@
-.home { min-height: 100vh; padding: clamp(1.5rem, 4vw, 3.5rem); background: radial-gradient(circle at 10% 10%, rgba(183,99,255,.2), transparent 30rem), radial-gradient(circle at 90% 90%, rgba(64,224,208,.13), transparent 28rem), #12111a; }
+.home { min-height: 100vh; padding: clamp(1.5rem, 4vw, 1rem); background: radial-gradient(circle at 10% 10%, rgba(183,99,255,.2), transparent 30rem), radial-gradient(circle at 90% 90%, rgba(64,224,208,.13), transparent 28rem), #12111a; }
 .home__header { max-width: 38rem; margin: 0 auto 1.75rem; text-align: center; }
 .home__label, .player__eyebrow { color: #d6a5ff; font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .home h1 { margin: .45rem 0; font-size: clamp(1.8rem, 4vw, 3.25rem); line-height: 1.04; }

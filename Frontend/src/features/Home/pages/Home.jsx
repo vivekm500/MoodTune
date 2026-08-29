@@ -1,4 +1,5 @@
 import FaceExpressionDetector from '../../Expression/components/FaceExpressionDetector'
+import Navbar from '../components/Navbar'
 import Player from '../components/player'
 import useSong from '../hooks/useSong'
 import '../styles/player.scss'
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <main className="home">
+      <Navbar />
       <header className="home__header">
         <p className="home__label">MoodTune</p>
         <h1>Music that meets you where you are.</h1>
