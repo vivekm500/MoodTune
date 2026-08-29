@@ -46,12 +46,26 @@ async function uploadSong(req, res){
 }
 
 
-// get song bu mood
+// get song by mood
 async function getSong(req,res){
+  const { mood, excludeSongId } = req.query
+  const filter = { mood }
 
-  const {mood} = req.query
+  // Prefer a different song for the same mood when the current song is known.
+  if (excludeSongId && mongoose.isValidObjectId(excludeSongId)) {
+    filter._id = { $ne: excludeSongId }
+  }
 
-  const song  = await songModel.findOne({mood})
+  let song = await songModel.findOne(filter)
+
+  // A mood with only one song should remain playable instead of returning nothing.
+  if (!song && filter._id) {
+    song = await songModel.findOne({ mood })
+  }
+
+  if (!song) {
+    return res.status(404).json({ message: 'No song found for this mood.' })
+  }
 
   res.status(200).json({
     message: "song fetched successfully.",

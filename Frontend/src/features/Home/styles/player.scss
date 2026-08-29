@@ -1,0 +1,36 @@
+.home { min-height: 100vh; padding: clamp(1.5rem, 4vw, 3.5rem); background: radial-gradient(circle at 10% 10%, rgba(183,99,255,.2), transparent 30rem), radial-gradient(circle at 90% 90%, rgba(64,224,208,.13), transparent 28rem), #12111a; }
+.home__header { max-width: 38rem; margin: 0 auto 1.75rem; text-align: center; }
+.home__label, .player__eyebrow { color: #d6a5ff; font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.home h1 { margin: .45rem 0; font-size: clamp(1.8rem, 4vw, 3.25rem); line-height: 1.04; }
+.home__intro { color: #bcb8c9; font-size: .95rem; line-height: 1.55; }
+.home__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 25rem)); gap: 1.5rem; align-items: stretch; justify-content: center; max-width: 52rem; margin: auto; }
+.home__detector, .home__player-panel { min-width: 0; border: 1px solid rgba(255,255,255,.12); border-radius: 1.25rem; background: rgba(31,29,44,.84); box-shadow: 0 1.25rem 4rem rgba(0,0,0,.24); overflow: hidden; }
+.home__detector { display: grid; place-items: center; }
+.home__detector > div { width: 100%; padding: 1.25rem !important; }
+.home__detector > div > div { width: min(100%, 19rem) !important; }
+.home__detector video { aspect-ratio: 1 / .78; object-fit: cover; }
+.home__player-panel { display: grid; grid-template-rows: 1fr auto; }
+.player { display: grid; grid-template-rows: 12rem 1fr; min-height: 100%; }
+.player__artwork { position: relative; overflow: hidden; background: #272435; }
+.player__artwork-background { position: absolute; inset: -.75rem; width: calc(100% + 1.5rem); height: calc(100% + 1.5rem); object-fit: cover; filter: blur(1.1rem) brightness(.55); transform: scale(1.08); }
+.player__artwork-image { position: relative; z-index: 1; width: 100%; height: 100%; display: block; object-fit: contain; }
+.player__artwork span { position: absolute; top: .85rem; left: .85rem; padding: .35rem .55rem; border-radius: 100px; background: rgba(12,10,20,.68); font-size: .65rem; font-weight: 800; letter-spacing: .08em; }
+.player__content { display: grid; gap: 1rem; padding: 1.25rem; }
+.player__loading { margin: 0; color: #d6a5ff; font-size: .72rem; font-weight: 700; }
+.player__song-details h2 { margin-top: .3rem; font-size: 1.45rem; }
+.player__timeline { display: grid; grid-template-columns: auto 1fr auto; gap: .55rem; align-items: center; color: #bcb8c9; font-size: .7rem; font-variant-numeric: tabular-nums; }
+.player input[type='range'] { width: 100%; accent-color: #d574ff; cursor: pointer; }
+.player__controls { display: flex; justify-content: center; align-items: center; gap: .85rem; }
+.player button, .home__new-song { border: 0; color: inherit; cursor: pointer; font: inherit; }
+.player__play { min-width: 4rem; height: 2.85rem; padding: 0 .9rem; border-radius: 100px; background: #f0d1ff; color: #311744 !important; font-weight: 800; box-shadow: 0 .5rem 1.25rem rgba(213,116,255,.3); }
+.player__skip { padding: .45rem; background: transparent; color: #d7d2e1 !important; font-size: .72rem !important; }
+.player__skip span { font-size: .64rem; font-weight: 800; }
+.player__settings { display: grid; grid-template-columns: .75fr 1.25fr; gap: .75rem; }
+.player__speed, .player__volume { display: grid; gap: .35rem; color: #bcb8c9; font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.player__toggle { display: flex; align-items: center; gap: .45rem; color: #d7d2e1; font-size: .72rem; font-weight: 700; cursor: pointer; }
+.player__toggle input { accent-color: #d574ff; cursor: pointer; }
+.player select { border: 1px solid rgba(255,255,255,.14); border-radius: .5rem; padding: .45rem; background: #272435; color: #f6f0fa; font: inherit; letter-spacing: normal; text-transform: none; }
+.home__new-song { width: calc(100% - 2.5rem); margin: 0 1.25rem 1.25rem; padding: .75rem 1rem; border-radius: .75rem; background: rgba(255,255,255,.09); transition: background .2s ease; }
+.home__new-song:hover:not(:disabled) { background: rgba(255,255,255,.16); }
+.home__new-song:disabled { cursor: wait; opacity: .65; }
+@media (max-width: 760px) { .home { padding: 1.25rem; } .home__grid { grid-template-columns: minmax(0,25rem); } }
