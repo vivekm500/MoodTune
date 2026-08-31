@@ -17,8 +17,11 @@ const [password, setPassword] = useState("");
 
 async function handleSubmit(e){
   e.preventDefault()
-  await handleLogin({email, password})
+  const loggedIn = await handleLogin({email, password})
+  console.log(loggedIn)
+  if(loggedIn){
   navigate("/")
+}
 }
 
 
