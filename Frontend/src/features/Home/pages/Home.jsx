@@ -9,6 +9,8 @@ const getMoodFromExpression = (expression = '') => {
   if (normalizedExpression.includes('sad')) return 'sad'
   if (normalizedExpression.includes('angry')) return 'angry'
   if (normalizedExpression.includes('surprised')) return 'surprised'
+  if(normalizedExpression.includes('calm'))
+    return 'calm'
   return 'happy'
 }
 

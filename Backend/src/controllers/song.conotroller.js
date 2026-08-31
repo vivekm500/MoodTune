@@ -53,14 +53,20 @@ async function getSong(req,res){
 
   // Prefer a different song for the same mood when the current song is known.
   if (excludeSongId && mongoose.isValidObjectId(excludeSongId)) {
-    filter._id = { $ne: excludeSongId }
+    filter._id = { $ne: new mongoose.Types.ObjectId(excludeSongId) }
   }
 
-  let song = await songModel.findOne(filter)
+  let [song] = await songModel.aggregate([
+    { $match: filter },
+    { $sample: { size: 1 } },
+  ])
 
   // A mood with only one song should remain playable instead of returning nothing.
   if (!song && filter._id) {
-    song = await songModel.findOne({ mood })
+    [song] = await songModel.aggregate([
+      { $match: { mood } },
+      { $sample: { size: 1 } },
+    ])
   }
 
   if (!song) {

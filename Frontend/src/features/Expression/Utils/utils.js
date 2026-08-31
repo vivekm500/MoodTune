@@ -206,7 +206,7 @@ export function detectExpression(s) {
   // =================================
 
   if (score < 0.4) {
-    return "😐 Neutral";
+    return "😐 Calm";
   }
 
   return expression;
